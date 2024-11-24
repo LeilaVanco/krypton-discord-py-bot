@@ -19,11 +19,11 @@ async def on_message(message: discord.Message):
 
 @bot.event
 async def on_raw_message_edit(payload: discord.RawMessageUpdateEvent):
-    if payload.guild_id == 1308177515130654851:
+    if payload.guild_id == YOUR_GUILD_ID:
         try:
             channel = bot.get_channel(payload.channel_id)
             author_id = payload.data.get("author", {}).get("id", None)
-            logs_channel = bot.get_channel(1310043004677132380)
+            logs_channel = bot.get_channel(YOUR_LOGS_CHANNEL)
             author_avatar = payload.data.get("author", {}).get("avatar", None)
             new_message = await channel.fetch_message(payload.message_id)
             new_content = new_message.content
