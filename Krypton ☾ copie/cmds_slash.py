@@ -14,7 +14,7 @@ async def userinfo(interaction: discord.Interaction, member: discord.Member):
     if user.banner:
         tab2.insert(1, user.banner.url)
     else:
-        await tab2.insert(1, "The user doesn't have banner")
+        tab2.insert(1, "The user doesn't have banner")
     await interaction.response.send_message(f"{interaction.user}, here some informations about {member.mention}")
     for i in tab2:
         await interaction.followup.send(f"{i}")
