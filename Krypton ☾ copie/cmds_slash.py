@@ -24,7 +24,7 @@ async def userinfo(interaction: discord.Interaction, member: discord.Member):
 @bot.tree.command(description= "Informations on the server")
 async def guildinfo(interaction: discord.Interaction):
     guild = interaction.guild
-    await interaction.response.send_message(f"{guild.name} server was created on <t:{int(datetime.fromisoformat(f"{guild.created_at}").timestamp())}:R> by {guild.owner} and has {guild.member_count} member(s).")
+    await interaction.response.send_message(f"{guild.name} server was created on <t:{int(datetime.fromisoformat(f"{guild.created_at}").timestamp())}:R> by {guild.owner.mention} ({guild.owner}) and has {guild.member_count} member(s).")
 
 @bot.tree.command(description= "Return bot latency")
 async def ping(interaction: discord.Interaction):
