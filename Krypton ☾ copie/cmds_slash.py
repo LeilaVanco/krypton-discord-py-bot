@@ -7,12 +7,12 @@ bot = commands.Bot(command_prefix = "!", intents = intents)
 
 @bot.tree.command()
 async def userinfo(interaction: discord.Interaction, member: discord.Member):
-    roles_mention = await [role.mention for role in member.roles if role.name != "@everyone"]
+    roles_mention = [role.mention for role in member.roles if role.name != "@everyone"]
     user = await bot.fetch_user(member.id)
     #tab = [""]
     tab2 = [member.avatar, member.mention, member.global_name, member.created_at.strftime("%d/%m/%Y à %H:%M:%S"), member.joined_at.strftime("%d/%m/%Y à %H:%M:%S"), "".join(f"{roles_mention}")]
     if user.banner:
-        await tab2.insert(1, user.banner.url)
+        tab2.insert(1, user.banner.url)
     else:
         await tab2.insert(1, "The user doesn't have banner")
     await interaction.response.send_message(f"{interaction.user}, here some informations about {member.mention}")
