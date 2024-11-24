@@ -1,3 +1,5 @@
+#In this case, logs are only working on one server and channel, that you can choose below
+
 import discord
 from discord.ext import commands
 
