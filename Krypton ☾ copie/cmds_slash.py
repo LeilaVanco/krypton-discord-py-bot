@@ -35,7 +35,7 @@ async def ping(interaction: discord.Interaction):
 async def on_ready():
     print(f"I am well connected on {bot.user}")
     try:
-        await bot.tree.sync(guild = discord.Object(id = 1308177515130654851))
+        await bot.tree.sync(guild = discord.Object(id = YOUR_SERVER_ID))
         #or await bot.tree.sync() if you don't want specific a server
         print(f"{len(bot.tree.get_commands())} command(s) well synchronized !")
     except Exception as error:
